@@ -1,0 +1,14 @@
+<%
+  screenshots_baseuri = '/images/screenshots'
+  screenshots_basedir = OnBoard::ROOTDIR + '/public/' + screenshots_baseuri
+%>
+
+<h2>Screenshots</h2>
+
+<ul>
+  <% Dir.foreach(screenshots_basedir) do |entry| %>
+    <% if entry =~ /\.(png|jpe?g)$/%>
+      <li><a href="<%= screenshots_baseuri + '/' + entry %>"><%= html_escape entry %></a></li>
+    <% end %>
+  <% end %> 
+</ul>
