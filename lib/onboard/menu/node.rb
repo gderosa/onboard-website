@@ -5,18 +5,19 @@ require 'onboard/extensions/tree'
 class OnBoard
   module Menu
     class MenuNode < Tree::TreeNode
+      SUBURI = OnBoard::SUBURI
       def to_html_ul
         # TODO: use CSS+Javascript to show/hide subitems on click
         s = ""
         if isRoot?
-          s << "<a href=\"/\">Home</a>"
+          s << '<a href="' << SUBURI << '/' << '">Home</a>'
         else
           if content 
             if content[:href]
               s << 
                 "<a " << 
                   "title=\"#{content[:desc]}\" " << 
-                  "href=\"#{content[:href]}.html\">#{content[:name]}" <<
+                  "href=\"#{SUBURI + content[:href]}.html\">#{content[:name]}" <<
                 "</a>"
             elsif content[:name]
               s << 

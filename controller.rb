@@ -10,6 +10,9 @@ require 'onboard/extensions/object'
 require 'onboard/menu/node'
 
 class OnBoard::Controller < Sinatra::Base
+  SUBURI = OnBoard::SUBURI
+  SUBURIRE = OnBoard::SUBURIRE
+
   # Several options are not enabled by default if you inherit from 
   # Sinatra::Base .
   enable :methodoverride, :static, :show_exceptions
@@ -27,6 +30,10 @@ class OnBoard::Controller < Sinatra::Base
 
   not_found do
     format(:path=>'404', :format=>'html') 
+  end
+
+  before do
+    request.path_info.sub!(SUBURIRE, '/')
   end
 
   helpers do

@@ -9,6 +9,7 @@ require 'yaml'
 require 'logger'
 require 'pp' 
 
+require 'onboard/suburi'
 require 'onboard/extensions/object'
 require 'onboard/menu/node'
 

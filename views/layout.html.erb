@@ -1,8 +1,11 @@
 <!DOCTYPE html>
+<% 
+  subURI = OnBoard::Controller::SUBURI
+%>
 <html>
   <head>
     <title><%= OnBoard::LONGNAME %></title> 
-    <link rel="stylesheet" href="/css/default.css"/>
+    <link rel="stylesheet" href="<%= subURI + '/css/default.css' %>"/>
   </head>
   <body>
     <div id="sidebar">
