@@ -33,7 +33,11 @@ class OnBoard::Controller < Sinatra::Base
   end
 
   before do
-    request.path_info.sub!(SUBURIRE, '/')
+    if request.path_info == SUBURI
+      request.path_info = '/'
+    else
+      request.path_info.sub!(SUBURIRE, '')
+    end
   end
 
   helpers do

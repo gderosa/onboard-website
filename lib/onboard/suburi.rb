@@ -1,4 +1,4 @@
 class OnBoard
   SUBURI = '/onboard'
-  SUBURIRE = /^\/onboard\//
+  SUBURIRE = /^\/onboard/
 end

@@ -1,2 +1,2 @@
 #!/bin/sh
-thin -C config.yml -R config.ru start
+thin -s 2 -C config.yml -R config.ru start
