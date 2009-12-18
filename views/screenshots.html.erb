@@ -6,7 +6,7 @@
 <h2>Screenshots</h2>
 
 <ul>
-  <% Dir.foreach(screenshots_basedir) do |entry| %>
+  <% Dir.foreach(screenshots_basedir).sort.each do |entry| %>
     <% if entry =~ /\.(png|jpe?g)$/%>
       <li><a href="<%= screenshots_baseuri + '/' + entry %>"><%= html_escape entry %></a></li>
     <% end %>

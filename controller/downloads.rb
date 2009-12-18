@@ -3,10 +3,7 @@ require 'sinatra/base'
 class OnBoard::Controller
 
   get "/downloads.html" do
-    format(
-      :path     => '/downloads',
-      :format   => 'html'
-    )
+    redirect 'http://github.com/gderosa/onboard/downloads'
   end
 
 end
